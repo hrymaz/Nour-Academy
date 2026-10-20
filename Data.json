@@ -1,0 +1,16 @@
+  [
+  { "titre": "Mathématiques", "niveau": "Collège", "prix": 350 },
+  { "titre": "Physique-Chimie", "niveau": "Collège", "prix": 350 },
+  { "titre": "Français", "niveau": "Collège", "prix": 300 },
+  { "titre": "Anglais", "niveau": "Collège", "prix": 300 },
+  { "titre": "Mathématiques", "niveau": "Tronc commun", "prix": 400 },
+  { "titre": "Physique-Chimie", "niveau": "Tronc commun", "prix": 400 },
+  { "titre": "SVT", "niveau": "Tronc commun", "prix": 350 },
+  { "titre": "Français", "niveau": "Tronc commun", "prix": 300 },
+  { "titre": "Mathématiques", "niveau": "1ère Bac", "prix": 450 },
+  { "titre": "Physique-Chimie", "niveau": "1ère Bac", "prix": 450 },
+  { "titre": "SVT", "niveau": "1ère Bac", "prix": 400 },
+  { "titre": "Mathématiques", "niveau": "2ème Bac", "prix": 500 },
+  { "titre": "Physique-Chimie", "niveau": "2ème Bac", "prix": 500 },
+  { "titre": "Anglais", "niveau": "2ème Bac", "prix": 350 }
+]
