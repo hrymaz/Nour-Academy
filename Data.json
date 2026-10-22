@@ -1,16 +1,21 @@
-  [
-  { "titre": "Mathématiques", "niveau": "Collège", "prix": 350 },
-  { "titre": "Physique-Chimie", "niveau": "Collège", "prix": 350 },
-  { "titre": "Français", "niveau": "Collège", "prix": 300 },
-  { "titre": "Anglais", "niveau": "Collège", "prix": 300 },
-  { "titre": "Mathématiques", "niveau": "Tronc commun", "prix": 400 },
-  { "titre": "Physique-Chimie", "niveau": "Tronc commun", "prix": 400 },
-  { "titre": "SVT", "niveau": "Tronc commun", "prix": 350 },
-  { "titre": "Français", "niveau": "Tronc commun", "prix": 300 },
-  { "titre": "Mathématiques", "niveau": "1ère Bac", "prix": 450 },
-  { "titre": "Physique-Chimie", "niveau": "1ère Bac", "prix": 450 },
-  { "titre": "SVT", "niveau": "1ère Bac", "prix": 400 },
-  { "titre": "Mathématiques", "niveau": "2ème Bac", "prix": 500 },
-  { "titre": "Physique-Chimie", "niveau": "2ème Bac", "prix": 500 },
-  { "titre": "Anglais", "niveau": "2ème Bac", "prix": 350 }
+[
+  { "titre": "Mathématiques", "niveau": "Collège", "prix": 350, "img": { "src": "../img/MATH.jpg" } },
+  { "titre": "Physique-Chimie", "niveau": "Collège", "prix": 350, "img": { "src": "../img/Physique.jpg" } },
+  { "titre": "Français", "niveau": "Collège", "prix": 300, "img": { "src": "../img/SVT.jpg" } },
+  { "titre": "SVT", "niveau": "Collège", "prix": 300, "img": { "src": "../img/Françes.jpg" } },
+
+  { "titre": "Mathématiques", "niveau": "Tronc commun", "prix": 400, "img": { "src": "../img/MATH.jpg" } },
+  { "titre": "Physique-Chimie", "niveau": "Tronc commun", "prix": 400, "img": { "src": "../img/Physique.jpg" } },
+  { "titre": "SVT", "niveau": "Tronc commun", "prix": 350, "img": { "src": "../img/SVT.jpg" } },
+  { "titre": "Français", "niveau": "Tronc commun", "prix": 300, "img": { "src": "../img/Françes.jpg" } },
+
+  { "titre": "Mathématiques", "niveau": "1ère Bac", "prix": 450, "img": { "src": "../img/MATH.jpg" } },
+  { "titre": "Physique-Chimie", "niveau": "1ère Bac", "prix": 450, "img": { "src": "../img/Physique.jpg" } },
+  { "titre": "SVT", "niveau": "1ère Bac", "prix": 400, "img": { "src": "../img/SVT.jpg" } },
+  { "titre": "Français", "niveau": "1ère Bac", "prix": 350, "img": { "src": "../img/Françes.jpg" } },
+
+  { "titre": "Mathématiques", "niveau": "2ème Bac", "prix": 500, "img": { "src": "../img/MATH.jpg" } },
+  { "titre": "Physique-Chimie", "niveau": "2ème Bac", "prix": 500, "img": { "src": "../img/Physique.jpg" } },
+  { "titre": "SVT", "niveau": "2ème Bac", "prix": 400, "img": { "src": "../img/SVT.jpg" } },
+  { "titre": "Français", "niveau": "2ème Bac", "prix": 350, "img": { "src": "../img/Françes.jpg" } }
 ]
