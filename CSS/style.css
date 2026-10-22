@@ -1,0 +1,197 @@
+@theme {
+    --color-bleu-marchica: #075985;
+    --color-sable: #F5E9D3;
+    --color-turquoise: #0F766E;
+    --color-blanc-casse: #FAFAF9;
+
+    --font-titre: "Noto Sans", sans-serif;
+    --font-texte: "Roboto", sans-serif;
+
+    --text-titre1: 64px;
+    --text-titre2: 40px;
+    --text-paragraphe: 24px;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.menu a {
+    position: relative;
+    left: 30px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #075985;
+    font-size: 15px;
+    border: 1px solid #075985;
+    border-radius: 30px;
+    padding: 2px 10px;
+    margin: 3px;
+    color: #F5E9D3;
+    box-shadow: 0 5px 10px #075985;
+}
+
+
+
+.menu a:hover {
+    background-color: #F5E9D3;
+    color: #075985;
+}
+
+.search-bar {
+    background-color: blue;
+    color: #075985;
+    padding: 2px 10px;
+    border-radius: 30px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    min-width: 150px;
+    height: 20px;
+    padding: 6px;
+    background: white;
+    border: 1px solid #075985;
+    border-radius: 30px;
+    box-shadow: 0 5px 20px;
+}
+
+.search-bar input {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: white;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+section img {
+    width: 600px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 30px;
+
+}
+
+.Année {
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 60%;
+    border-radius: 30px;
+    padding: 0;
+    max-width: 400px;
+    font-size: 8px;
+}
+
+.Année h2 {
+    position: relative;
+    left: 10px;
+}
+
+.Année svg {
+    position: relative;
+    left: 10px;
+    align-items: center;
+}
+
+.paret-1 h1 {
+    color: #075985;
+    font-family: "Isometra", serif;
+    font-size: 80px;
+}
+
+.paret-1 p {
+    color: #075985;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.paret-1 button a {
+    background-color: #075985;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 10px;
+    color: #F5E9D3;
+}
+
+.paret-1 button {
+    position: relative;
+    right: 8px;
+    display: flex;
+    justify-content: start;
+    background-color: white;
+    border: none;
+    font-size: 15px;
+}
+
+.paret-1 button a:hover {
+    background-color: #F5E9D3;
+    color: #075985;
+}
+
+hr {
+    width: 1450px;
+}
+
+#courses-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    border: 1px solid #454b46;
+    border-radius: 30px;
+    padding: 20px;
+    background-color: #F5E9D3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    box-sizing: border-box;
+}
+.course-card img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 30px;
+}
