@@ -33,7 +33,7 @@ header {
     height: auto;
 }
 
-.menu a {
+/* .menu a {
     position: relative;
     left: 30px;
     text-decoration: none;
@@ -53,7 +53,7 @@ header {
 .menu a:hover {
     background-color: #F5E9D3;
     color: #075985;
-}
+} */
 
 .search-bar {
     color: #075985;
@@ -61,7 +61,7 @@ header {
     border-radius: 30px;
 }
 
-.search-bar {
+#search-bar {
     display: flex;
     align-items: center;
     min-width: 150px;
@@ -70,7 +70,8 @@ header {
     border-radius: 30px;  
 }
 
-.search-bar input {
+#search-bar input {
+    align-items: center;
     padding: 5px 15px;
     border: none;
     border-radius: 30px;
@@ -79,7 +80,7 @@ header {
     outline: none;
 }
 
-.search-bar button {
+#search-bar button {
     background-color: white;
     border-radius: 30px;
     border: none;
@@ -90,6 +91,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #F5E9D3;
+    border-radius: 30px;
     margin: 20px;
 }
 
@@ -98,6 +101,7 @@ section img {
     height: auto;
     object-fit: cover;
     border-radius: 30px;
+    padding: 20px;
 
 }
 
@@ -105,44 +109,18 @@ section img {
     color: #075985;
     font-family: "Isometra", serif;
     font-size: 80px;
+    padding: 20px;
 }
-
-.paret-1 p {
-    color: #075985;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.paret-1 button a {
-    background-color: #075985;
-    text-decoration: none;
-    border: none;
-    border-radius: 30px;
-    padding: 8px 10px;
-    color: #F5E9D3;
-}
-
-.paret-1 button {
-    position: relative;
-    right: 8px;
+#filtre-niveau  {
     display: flex;
-    justify-content: start;
-    background-color: white;
-    border: none;
-    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: #075985;
 }
-
-.paret-1 button a:hover {
-    background-color: #F5E9D3;
-    color: #075985;
-}
-
-hr {
-    width: 1450px;
-}
-
 #courses-container {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding: 20px;
     gap: 20px;
 }
 
@@ -181,18 +159,7 @@ hr {
         width: 100px;
     }
 
-    .menu {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .menu a {
-        position: static;
-        margin: 0;
-        font-size: 13px;
-        padding: 6px 10px;
-    }
+    
 
     .search-bar {
         width: 80%;
@@ -215,31 +182,9 @@ hr {
     }
 
     section img {
-        width: 100%;
+        width: auto%;
         height: 250px;
         object-fit: cover;
-    }
-
-    .paret-1 {
-        width: 100%;
-    }
-
-    .paret-1 h1 {
-        font-size: 36px;
-    }
-
-    .paret-1 p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-    .paret-1 button {
-        right: 0;
-    }
-
-    hr {
-        width: 90%;
-        margin: 20px auto;
     }
 
     #courses-container {
@@ -260,4 +205,60 @@ hr {
         object-fit: cover;
         border-radius: 20px;
     }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+     header {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 15px;
+    }
+        .search-bar {
+         width: 100%;
+         max-width: 200px;
+         box-sizing: border-box;
+         gap: 10px;
+    }
+
+    .search-bar input {
+        flex: 1;
+        width: 0;
+        min-width: 0;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+        section {
+        flex-direction: column;
+        margin: 15px;
+        gap: 20px;
+    }
+
+    section img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+     .paret-1 {
+        width: 100%;
+    }
+       #courses-container {
+        grid-template-columns: repeat( 2 , 1fr) ;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .course-card {
+        width: 100%;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .course-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
 }
