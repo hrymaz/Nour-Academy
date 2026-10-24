@@ -1,32 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
-    <title>Document</title>
+    <title>Nour Académie</title>
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <body>
+
     <main>
+
         <header>
             <div class="logo">
-                <img src="../img/Nour.png" alt="">
+                <img src="../img/Nour.png" alt="Logo Nour Académie">
             </div>
-            <div class="menu">
-                <nav>
-                    <a class="active" href="#Accueil">Accueil</a>
-                    <a href="../HTMl/contact.html">cours</a>
-                    <a href="../HTMl/contact.html">Formations</a>
-                    <a href="../HTMl/contact.html">contact</a>
-                </nav>
-            </div>
-            <div class="search-bar">
+            <div id="search-bar">
                 <input type="text" id="search" placeholder="Rechercher un cours...">
-                <button type="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+
+                <button type="button" aria-label="Rechercher">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
                         fill="#1f1f1f">
                         <path
                             d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
@@ -34,35 +28,79 @@
                 </button>
             </div>
         </header>
+
         <section id="Accueil">
             <div class="paret-1">
-                
                 <h1>Chaque réussite commence par le bon cours.</h1>
-                <button>
-                    <a href="contact.html">Découvrir nos cours</a>
-                </button>
             </div>
+
             <div>
-                <img  src="../img/Nour-class.jpg" alt="">
+                <img src="../img/Nour-class.jpg" alt="Classe de Nour Académie">
             </div>
         </section>
-        
-            <select id="filtre-niveau">
-                <option value="Tous">Tous les niveaux</option>
+        <div id="filtre-niveau">
+            <select class="niveaux">
+                <option value="">Tous les niveaux</option>
                 <option value="Collège">Collège</option>
                 <option value="Tronc commun">Tronc commun</option>
                 <option value="1ère Bac">1 Bac</option>
                 <option value="2ème Bac">2 Bac</option>
             </select>
 
-            <div id="courses-container"></div>
+            <select id="filtre-matiere">
+                <option value="">Toutes les matières</option>
+                <option value="Mathématiques">Mathématiques</option>
+                <option value="Physique-Chimie">Physique-Chimie</option>
+                <option value="SVT">SVT</option>
+                <option value="Français">Français</option>
+            </select>
+
+        </div>
+        <div id="courses-container"></div>
         <section>
 
         </section>
-        <section id="courses-container">
+
+
+        <section id="inscription">
+            <form class="formulaire">
+
+                <label>Nom complet</label>
+                <input type="text" placeholder="Ex : Mohamed Hrymaz" required>
+
+                <label>Numéro WhatsApp</label>
+                <input type="tel" placeholder="Ex : +212 6 XX XX XX XX" required>
+
+                <label>Cours souhaité</label>
+                <select required>
+                    <option value="">-- Choisissez un cours --</option>
+                    <option>Mathématiques</option>
+                    <option>Physique-Chimie</option>
+                    <option>Français</option>
+                    <option>Anglais</option>
+                    <option>SVT</option>
+                </select>
+
+                <label>Niveau scolaire</label>
+                <select required>
+                    <option value="">-- Choisissez votre niveau --</option>
+                    <option>Collège</option>
+                    <option>Tronc commun</option>
+                    <option>1 Bac</option>
+                    <option>2 Bac</option>
+                </select>
+
+                <button type="submit">
+                    S'inscrire maintenant
+                </button>
+
+            </form>
+        </section>
 
     </main>
+
     <script src="../JS/script.js"></script>
+
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-@theme {
+:root {
     --color-bleu-marchica: #075985;
     --color-sable: #F5E9D3;
     --color-turquoise: #0F766E;
@@ -32,28 +32,6 @@ header {
     width: 100px;
     height: auto;
 }
-
-/* .menu a {
-    position: relative;
-    left: 30px;
-    text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #075985;
-    font-size: 15px;
-    border: 1px solid #075985;
-    border-radius: 30px;
-    padding: 2px 10px;
-    margin: 3px;
-    color: #F5E9D3;
-    box-shadow: 0 5px 10px #075985;
-}
-
-
-
-.menu a:hover {
-    background-color: #F5E9D3;
-    color: #075985;
-} */
 
 .search-bar {
     color: #075985;
@@ -111,11 +89,26 @@ section img {
     font-size: 80px;
     padding: 20px;
 }
+
 #filtre-niveau  {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 60px;
+}
+.niveaux{
     background-color: #075985;
+    border-radius: 30px;
+    padding: 10px 20px ;
+    font-size: 15px;
+    border: none; 
+}
+#filtre-matiere{
+    background-color: #075985;
+    border-radius: 30px;
+    padding: 10px 20px ;
+    font-size: 15px;
+    border: none; 
 }
 #courses-container {
     display: grid;
@@ -153,7 +146,7 @@ section img {
         flex-direction: column;
         gap: 15px;
         padding: 15px;
-    }
+    } 
 
     .logo img {
         width: 100px;
@@ -182,7 +175,7 @@ section img {
     }
 
     section img {
-        width: auto%;
+        width: auto;
         height: 250px;
         object-fit: cover;
     }
