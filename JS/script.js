@@ -1,42 +1,43 @@
 const container = document.querySelector("#courses-container");
 const selectFiltre = document.querySelector("#filtre-niveau");
 const selectMatiere = document.querySelector("#filtre-matiere");
-const autosearch = document.querySelector("#search-bar")
+const autosearch = document.querySelector("#search");
 
 async function fetchData() {
     const data = await fetch("../Data.json");
     const result = await data.json();
     return result;
 }
-let arr =[] 
 
-async function afficherCours(x = []) {
+let arr = [];
+
+async function afficherCours() {
     let cours = await fetchData();
-    arr = structuredClone(cours)
-    return ajouter(cours)
+    arr = structuredClone(cours);
+    ajouter(cours);
 }
 
-function filtreneo(cours) {
+function globalFilter() {
+    const searchTerm = autosearch.value.toLowerCase().trim();
     const selectFiltr = selectFiltre.value;
     const selectMatier = selectMatiere.value;
 
-    let filtercoures = cours.filter(course1 => {
-        const cour =
-            selectFiltr === "" || course1.niveau === selectFiltr;
-
-       const cour2 =
-       selectMatier === "" || course1.titre === selectMatier;
-
-        return cour && cour2;
+    let filtercoures = arr.filter(course1 => {
+        const Text = course1.titre?.toLowerCase().includes(searchTerm);
+        const Niveau = selectFiltr === "" || course1.niveau === selectFiltr;
+        const Matiere = selectMatier === "" || course1.titre?.toLowerCase().includes(selectMatier.toLowerCase());
+        return Text && Niveau && Matiere;
     });
 
     ajouter(filtercoures);
 }
 
-
-function ajouter( courses ) {
-   
+function ajouter(courses) {
     container.innerHTML = "";
+    if (courses.length === 0) {
+        container.innerHTML = "<p>Aucun cours trouvé</p>";
+        return courses;
+    }
     courses.forEach(course => {
         container.insertAdjacentHTML("beforeend", `
             <div class="course-card">
@@ -48,16 +49,11 @@ function ajouter( courses ) {
             </div>
         `);
     });
-     return courses 
+    return courses;
 }
 
-selectFiltre.addEventListener("change", () => { 
-   console.log()
-    filtreneo(arr)
+selectFiltre.addEventListener("change", globalFilter);
+selectMatiere.addEventListener("change", globalFilter);
+autosearch.addEventListener("input", globalFilter);
 
-});
-
-selectMatiere.addEventListener("change", () => {
-  filtreneo(arr)
-});
- afficherCours()
+afficherCours();
