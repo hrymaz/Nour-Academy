@@ -45,7 +45,7 @@ header {
     min-width: 150px;
     height: 20px;
     padding: 6px;
-    border-radius: 30px;  
+    border-radius: 30px;
 }
 
 #search-bar input {
@@ -63,6 +63,7 @@ header {
     border-radius: 30px;
     border: none;
     outline: none;
+    
 }
 
 section {
@@ -90,26 +91,29 @@ section img {
     padding: 20px;
 }
 
-#filtre-niveau  {
+#filtres {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 60px;
 }
-.niveaux{
+
+#filtre-niveau {
     background-color: #075985;
     border-radius: 30px;
-    padding: 10px 20px ;
+    padding: 10px 20px;
     font-size: 15px;
-    border: none; 
+    border: none;
 }
-#filtre-matiere{
+
+#filtre-matiere {
     background-color: #075985;
     border-radius: 30px;
-    padding: 10px 20px ;
+    padding: 10px 20px;
     font-size: 15px;
-    border: none; 
+    border: none;
 }
+
 #courses-container {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -139,20 +143,119 @@ section img {
     object-fit: cover;
     border-radius: 30px;
 }
+.course-card button {
+    background-color: #075985;
+    border: none;
+    border-radius: 30px;
+    padding: 5px 10px ;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.course-card button:hover{
+   background-color: #0F766E;
 
+}
+.inscription-section {
+    background-color: #F5E9D3;
+    padding: 40px 20px;
+}
+
+.inscription-container {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.inscription-container h2 {
+    color: #075985;
+    font-size: 32px;
+}
+
+.inscription-container p {
+    color: #333;
+    font-size: 16px;
+}
+
+.formulaire {
+    width: 100%;
+    max-width: 450px;
+    background-color: #FAFAF9;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label,
+.formulaire > label {
+    color: #075985;
+    font-weight: bold;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.input-wrapper i {
+    color: #0F766E;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.formulaire > input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.formulaire button {
+    background-color: #0F766E;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.formulaire button:hover {
+    background-color: #075985;
+}
 
 @media (max-width: 767px) {
     header {
         flex-direction: column;
         gap: 15px;
         padding: 15px;
-    } 
+    }
 
     .logo img {
         width: 100px;
     }
-
-    
 
     .search-bar {
         width: 80%;
@@ -198,20 +301,33 @@ section img {
         object-fit: cover;
         border-radius: 20px;
     }
+
+    .inscription-container {
+        flex-direction: column;
+    }
+
+    .inscription-container h2 {
+        font-size: 26px;
+    }
+
+    .formulaire {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-     header {
+    header {
         display: flex;
         justify-content: space-between;
         gap: 15px;
         padding: 15px;
     }
-        .search-bar {
-         width: 100%;
-         max-width: 200px;
-         box-sizing: border-box;
-         gap: 10px;
+
+    .search-bar {
+        width: 100%;
+        max-width: 200px;
+        box-sizing: border-box;
+        gap: 10px;
     }
 
     .search-bar input {
@@ -221,7 +337,8 @@ section img {
         font-size: 14px;
         box-sizing: border-box;
     }
-        section {
+
+    section {
         flex-direction: column;
         margin: 15px;
         gap: 20px;
@@ -232,11 +349,13 @@ section img {
         height: 400px;
         object-fit: cover;
     }
-     .paret-1 {
+
+    .paret-1 {
         width: 100%;
     }
-       #courses-container {
-        grid-template-columns: repeat( 2 , 1fr) ;
+
+    #courses-container {
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
         padding: 10px;
     }
@@ -254,4 +373,10 @@ section img {
         border-radius: 20px;
     }
 
+}
+
+.inscription-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 600px;
 }

@@ -38,13 +38,14 @@
                 <img src="../img/Nour-class.jpg" alt="Classe de Nour Académie">
             </div>
         </section>
-        <div id="filtre-niveau">
-            <select class="niveaux">
+
+        <div id="filtres">
+            <select id="filtre-niveau">
                 <option value="">Tous les niveaux</option>
                 <option value="Collège">Collège</option>
                 <option value="Tronc commun">Tronc commun</option>
-                <option value="1ère Bac">1 Bac</option>
-                <option value="2ème Bac">2 Bac</option>
+                <option value="1ère Bac">1ère Bac</option>
+                <option value="2ème Bac">2ème Bac</option>
             </select>
 
             <select id="filtre-matiere">
@@ -54,47 +55,73 @@
                 <option value="SVT">SVT</option>
                 <option value="Français">Français</option>
             </select>
-
         </div>
+
         <div id="courses-container"></div>
         <section>
 
         </section>
 
 
-        <section id="inscription">
-            <form class="formulaire">
+        <section id="inscription" class="inscription-section">
+            <div class="inscription-container">
+                <div>
+                    <h2>Inscrivez-vous maintenant</h2>
+                    <p>Remplissez le formulaire pour choisir votre cours.</p>
+                </div>
+                <form class="formulaire">
 
-                <label>Nom complet</label>
-                <input type="text" placeholder="Ex : Mohamed Hrymaz" required>
+                    <div class="form-group">
+                        <label for="nom">Nom complet</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="nom" name="nom" placeholder="Votre nom complet" required>
+                        </div>
+                    </div>
 
-                <label>Numéro WhatsApp</label>
-                <input type="tel" placeholder="Ex : +212 6 XX XX XX XX" required>
+                    <div class="form-group">
+                        <label for="whatsapp">Numéro WhatsApp</label>
+                        <div class="input-wrapper">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+212 6 XX XX XX XX" required>
+                        </div>
+                    </div>
 
-                <label>Cours souhaité</label>
-                <select required>
-                    <option value="">-- Choisissez un cours --</option>
-                    <option>Mathématiques</option>
-                    <option>Physique-Chimie</option>
-                    <option>Français</option>
-                    <option>Anglais</option>
-                    <option>SVT</option>
-                </select>
+                    <div class="form-group">
+                        <label for="cours">Cours souhaité</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-book-open"></i>
+                            <select id="cours" name="cours" required>
+                                <option value="" selected disabled>Choisir un cours</option>
+                                <option>Mathématiques</option>
+                                <option>Physique-Chimie</option>
+                                <option>Français</option>
+                                <option>Anglais</option>
+                                <option>SVT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label>Les enfants</label>
 
-                <label>Niveau scolaire</label>
-                <select required>
-                    <option value="">-- Choisissez votre niveau --</option>
-                    <option>Collège</option>
-                    <option>Tronc commun</option>
-                    <option>1 Bac</option>
-                    <option>2 Bac</option>
-                </select>
+                    <input type="number" value="1" min="1">
+                    <div class="form-group">
+                        <label for="niveau">Niveau scolaire</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <select id="niveau" name="niveau" required>
+                                <option value="" selected disabled>Choisir un niveau</option>
+                                <option>Collège</option>
+                                <option>Tronc commun</option>
+                                <option>1ère Bac</option>
+                                <option>2ème Bac</option>
+                            </select>
+                        </div>
+                    </div>
 
-                <button type="submit">
-                    S'inscrire maintenant
-                </button>
+                    <button type="submit">S'inscrire maintenant</button>
 
-            </form>
+                </form>
+            </div>
         </section>
 
     </main>

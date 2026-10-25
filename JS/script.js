@@ -16,16 +16,21 @@ async function afficherCours(x = []) {
     return ajouter(cours)
 }
 
-function filtreneo(cours){ 
-  const selectFiltr = document.querySelector("#filtre-niveau").value;
-  const selectMatier = document.querySelector("#filtre-matiere").value;
-  let filtercoures = cours.filter(course1 => {
-       const cour = selectFiltr == ""  ||  course1.niveau == selectFiltr ;
-        const cour2 = selectMatier == ""  ||  course1.matiere == selectMatier ;
-        return cour && cour2 ; 
-  
-  })
-  ajouter(filtercoures)
+function filtreneo(cours) {
+    const selectFiltr = selectFiltre.value;
+    const selectMatier = selectMatiere.value;
+
+    let filtercoures = cours.filter(course1 => {
+        const cour =
+            selectFiltr === "" || course1.niveau === selectFiltr;
+
+       const cour2 =
+       selectMatier === "" || course1.titre === selectMatier;
+
+        return cour && cour2;
+    });
+
+    ajouter(filtercoures);
 }
 
 
@@ -35,7 +40,7 @@ function ajouter( courses ) {
     courses.forEach(course => {
         container.insertAdjacentHTML("beforeend", `
             <div class="course-card">
-                <img src="${course.img.src}" alt="${course.alt}">
+               <img src="${course.img.src}" alt="${course.img.alt || course.titre}">
                 <h2>${course.titre}</h2>
                 <p>Niveau : ${course.niveau}</p>
                 <p>Prix : ${course.prix} MAD / mois</p>
