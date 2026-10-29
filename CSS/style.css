@@ -245,6 +245,38 @@ section img {
 .formulaire button:hover {
     background-color: #075985;
 }
+#ajute {
+    background: #F5E9D3;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 30px;
+}
+
+#ajute h3 {
+    color: #075985;
+}
+
+#panier-items p {
+    background: white;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+#panier-items button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 30px;
+    
+}
+
+#total {
+    background: #075985;
+    color: white;
+    padding: 10px;
+    border-radius: 30px;
+}
 
 @media (max-width: 767px) {
     header {

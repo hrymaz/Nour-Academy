@@ -1,59 +1,111 @@
+
+
 const container = document.querySelector("#courses-container");
-const selectFiltre = document.querySelector("#filtre-niveau");
-const selectMatiere = document.querySelector("#filtre-matiere");
-const autosearch = document.querySelector("#search");
+const niveau = document.querySelector("#filtre-niveau");
+const matiere = document.querySelector("#filtre-matiere");
+const recherche = document.querySelector("#search");
+const panier = document.querySelector("#panier-items");
+const total = document.querySelector("#total");
 
-async function fetchData() {
-    const data = await fetch("../Data.json");
-    const result = await data.json();
-    return result;
-}
-
-let arr = [];
+let cours = [];
+let selection = JSON.parse(localStorage.getItem("selection")) ;
 
 async function afficherCours() {
-    let cours = await fetchData();
-    arr = structuredClone(cours);
-    ajouter(cours);
+    const response = await fetch("../Data.json");
+    cours = await response.json();
+    afficher(cours);
+    afficherPanier();
 }
 
-function globalFilter() {
-    const searchTerm = autosearch.value.toLowerCase().trim();
-    const selectFiltr = selectFiltre.value;
-    const selectMatier = selectMatiere.value;
-
-    let filtercoures = arr.filter(course1 => {
-        const Text = course1.titre?.toLowerCase().includes(searchTerm);
-        const Niveau = selectFiltr === "" || course1.niveau === selectFiltr;
-        const Matiere = selectMatier === "" || course1.titre?.toLowerCase().includes(selectMatier.toLowerCase());
-        return Text && Niveau && Matiere;
-    });
-
-    ajouter(filtercoures);
-}
-
-function ajouter(courses) {
+function afficher(list) {
     container.innerHTML = "";
-    if (courses.length === 0) {
-        container.innerHTML = "<p>Aucun cours trouvé</p>";
-        return courses;
-    }
-    courses.forEach(course => {
-        container.insertAdjacentHTML("beforeend", `
-            <div class="course-card">
-               <img src="${course.img.src}" alt="${course.img.alt || course.titre}">
-                <h2>${course.titre}</h2>
-                <p>Niveau : ${course.niveau}</p>
-                <p>Prix : ${course.prix} MAD / mois</p>
-                <button>Choisir ce cours</button>
-            </div>
-        `);
+
+    list.forEach((coursus) => {
+        let bouton = "Ajouter";
+
+        if (coursus.places === 0) {
+            bouton = "Complet";
+        }
+
+        if (selection.includes(coursus.id)) {
+            bouton = "Ajouté";
+        }
+
+        container.innerHTML += `
+            <article class="course-card">
+                <img src="${coursus.img.src}" alt="${coursus.titre}">
+                <h3>${coursus.titre}</h3>
+                <p>${coursus.niveau}</p>
+                <p>${coursus.prix} MAD / mois</p>
+                <button data-id="${coursus.id}"
+                    ${coursus.places === 0 || selection.includes(coursus.id) ? "disabled" : ""}>
+                    ${bouton}
+                </button>
+            </article>
+        `;
     });
-    return courses;
 }
 
-selectFiltre.addEventListener("change", globalFilter);
-selectMatiere.addEventListener("change", globalFilter);
-autosearch.addEventListener("input", globalFilter);
+function filtrer() {
+    const resultat = cours.filter((coursus) => {
+        return coursus.titre.toLowerCase().includes(recherche.value.toLowerCase())
+            && (niveau.value === "" || coursus.niveau === niveau.value)
+            && (matiere.value === "" || coursus.titre.includes(matiere.value));
+    });
+
+    afficher(resultat);
+}
+
+container.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        const id = Number(event.target.dataset.id);
+
+        if (!selection.includes(id)) {
+            selection.push(id);
+            localStorage.setItem("selection", JSON.stringify(selection));
+            afficherPanier();
+            filtrer();
+        }
+    }
+});
+
+function afficherPanier() {
+    panier.innerHTML = "";
+    let somme = 0;
+
+    selection.forEach((id) => {
+        const coursus = cours.find((element) => element.id === id);
+
+        if (coursus) {
+            somme = somme + Number(coursus.prix);
+
+            panier.innerHTML += `
+                <p>
+                    ${coursus.titre} - ${coursus.prix} MAD
+                    <button data-id="${coursus.id}">Supprimer</button>
+                </p>
+            `;
+        }
+    });
+
+    total.textContent = "Total : " + somme + " MAD / mois";
+}
+
+panier.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+        const id = Number(event.target.dataset.id);
+
+        selection = selection.filter((element) => element !== id);
+
+        localStorage.setItem("selection", JSON.stringify(selection));
+
+        afficherPanier();
+        filtrer();
+    }
+});
+
+recherche.addEventListener("input", filtrer);
+niveau.addEventListener("change", filtrer);
+matiere.addEventListener("change", filtrer);
 
 afficherCours();
